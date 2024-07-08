@@ -4,7 +4,7 @@ This repository contains the implementation code for the manuscript:  <br>
 
 
 ## Overview
-We analyze and optimize gradients of binary spiking recurrent neural networks using concepts from dynamical systems theory. Specifically, we show that surrogate gradient training can be improved by pushing surrogate Lyapunov exponents to zero during or before training.
+We analyze and optimize gradients of binary and spiking recurrent neural networks using concepts from dynamical systems theory. Specifically, we show that surrogate gradient training can be improved by pushing surrogate Lyapunov exponents to zero during or before training.
 
 ## Installation
 

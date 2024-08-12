@@ -1,6 +1,6 @@
 # SurrogateGradientFlossing
 This repository contains the implementation code for the manuscript:  <br>
- __Improving Surrogate Gradient Learning in Spiking Neural Networks Using Dynamical Systems Theory__ <br>
+ __Using Dynamical Systems Theory to Improve Surrogate Gradient Learning in Spiking Neural Networks__ <br>
 
 
 ## Overview
@@ -66,6 +66,32 @@ A full specification of packages used and their versions can be found in _packag
 For learning rates, the default ADAM parameters were used to avoid any impression of fine-tuning.\
 All simulations were run on a single CPU and took on the order of minutes to a few hours.
 
+## Additional results:
+We here provide additional results on surrogate gradient flossing in binary RNNs. The following figures shows that we can manipulate one or several surrogate Lyapunov exponets in binary networks:
+
+**Figure 1: Surrogate gradient flossing** regularizes *surrogate Lyapunov exponents* and facilitates gradient signal propagation in binary neural networks.
+
+![**Surrogate gradient flossing** regularizes *surrogate Lyapunov exponents* and facilitates gradient signal propagation in binary neural networks. **A)** The first *surrogate Lyapunov exponent* of a recurrent binary network plotted as a function of training epochs for different surrogate sharpness $g$. The square of the first *surrogate Lyapunov exponent* is minimized using gradient descent. **B)** *Surrogate Lyapunov spectrum* of a recurrent binary network after different numbers of Lyapunov exponents $k$ have been driven towards zero via *surrogate gradient flossing* for $k\in\{1,16,32\}. The gray lines show the *surrogate Lyapunov spectra* before *surrogate gradient flossing*. Parameters: network size $N=80$, $g=1$ for **B**. Input as in Fig. 3. The thin semitransparent lines in **A** and **B** indicate nine network realizations; the full lines are their average.](/figures/bf_fig02a.svg)
+
+
+**A)** The first *surrogate Lyapunov exponent* of a recurrent binary network plotted as a function of training epochs for different surrogate sharpness $g$. The square of the first *surrogate Lyapunov exponent* is minimized using gradient descent.
+
+**B)** *Surrogate Lyapunov spectrum* of a recurrent binary network after different numbers of Lyapunov exponents $k$ have been driven towards zero via *surrogate gradient flossing* for $k\in\{1,16,32\}$. The gray lines show the *surrogate Lyapunov spectra* before *surrogate gradient flossing*. Parameters: network size $N=80$, $g=1$ for **B**. Input as in Fig. 3. The thin semitransparent lines in **A** and **B** indicate nine network realizations; the full lines are their average.
+
+The following figure shows that surrogate gradient flossing improves training in binary RNNs:
+
+**Figure 2: Surrogate gradient flossing improves binary RNN training.**
+
+![**Gradient flossing** improves binary RNN training. **A)** Test accuracy for binary RNNs trained on the delayed temporal binary XOR task $y_t=x_{t-d/2} \oplus x_{t-d}$ with *adaptive gradient flossing* during training (orange) and without *gradient flossing* (blue) for $d=18$. Solid lines are the median across 9 network realizations, and individual network realizations are shown in transparent fine lines. **B)** Mean final test accuracy as a function of task difficulty (delay $d$) for delayed XOR task. **C)** Gradient norm with respect to initial network state $\mathbf{h}_0$. **D)** Gradient norm with respect to initial network state as a function of temporal task complexity $T$ averaged over training epochs.](/figures/bf_fig03a.svg)
+
+
+**A)** Test accuracy for binary RNNs trained on the delayed temporal binary XOR task $y_t=x_{t-d/2} \oplus x_{t-d}$ with *adaptive gradient flossing* during training (orange) and without *gradient flossing* (blue) for $d=18$. Solid lines are the median across 9 network realizations, and individual network realizations are shown in transparent fine lines.
+
+**B)** Mean final test accuracy as a function of task difficulty (delay $d$) for delayed XOR task.
+
+**C)** Gradient norm with respect to initial network state $\mathbf{h}_0$.
+
+**D)** Gradient norm with respect to initial network state as a function of temporal task complexity averaged over training epochs.
 
 
 <!---
